@@ -1,0 +1,113 @@
+* =herolog=
+*HeroLog*: /An app to help you slay your backlog!/
+** Contents :toc_3:
+- [[#herolog][=herolog=]]
+  - [[#about-the-project][About the project]]
+  - [[#project-roadmap][Project roadmap]]
+    - [[#mvp][MVP]]
+    - [[#extra-features][Extra features]]
+    - [[#aiml-stuff][AI/ML stuff]]
+  - [[#installing-and-running-the-project][Installing and running the project]]
+  - [[#deploying-the-project][Deploying the project]]
+  - [[#acknowledgments][Acknowledgments]]
+    - [[#technologies-used][Technologies used]]
+  - [[#license][License]]
+
+** About the project
+This is a project to enable a user to keep track of their video gaming backlog.
+I was inspired to make this by a series of videos from the YouTuber [[https://www.youtube.com/@DarylTalksGames][Daryl Talks Games]]
+(see the [[https://www.youtube.com/playlist?list=PLwABHajSLTc_iF1vm5mWUPmC1acG91jXv][Backlog Project]] playlist).
+He tracks his games' progress via a spreadsheet with some color coding,
+and I thought that it would be cool for me to make an app to do what his spreadsheet does and more.
+Now, I kind of get into this more in the project roadmap,
+but I'd like my app to serve to allow you to do the same things that his spreadsheet does,
+with the following additional features on top:
+- for any game that you add, the app will fetch (and cache?) the cover art
+- for any game that you add, the app will autofill the time to beat, the critic scores, and other appropriate fields
+
+Additionally, I plan to leverage the application nature of my proposed backlog manager
+by adding machine-learning based suggestions on what to play next
+after the  user has completed a certain amount of games:
+- suggesting whether or not the user will complete a certain game based on the games completed
+- suggesting a "good" game to play next (randomly pick one of the games that model thinks you would finish)
+- suggesting the "best" game to play next (based on regression)
+
+Some things that I could add (just ideas that I'm putting down):
+- can have the app provide details and insights on what the user
+  likes based on the games that they've completed so far
+- add an "export to csv" feature that lets the user export all the games data
+** Project roadmap
+Below I have included various features I'd like to add or that I am
+thinking of adding to this project.
+This list serves mainly as a guide for me and notes for me to remember the
+exact things that I wanted to add, and it is subject to change.
+The features are roughly grouped by project stage or dimension,
+and are roughly in the order I'd like to implement them in.
+
+*** MVP
+1. [ ] add a home screen and an about screen (just HTML + HTMx, and for
+       now pick up a css library like simplecss or something)
+2. [ ] add a Game model definition
+3. [ ] update UI to be able to show, create (let's say manual add for now),
+       update, delete, and edit games (assume no users for now)
+4. [ ] add user login and allow games to be connected to specific user
+5. [ ] update create game to be a special flow that only asks for necessary things
+       and then fetches the other stuff using RAWG api
+6. [ ] add a special flow to say you either completed or dropped a game,
+       and then ask the user the necessary post-game questions (ie reflection, worth it, etc)
+7. [ ] add search for game by name
+*** Extra features
+1. [ ] add stuff to render a cool details screen for a specific game that
+       lets you see your feedbacks and stuff like that
+2. [ ] allow you to be able to click on various things to perform a query
+       on your games list (ie say a game has the "Fantasy" genre tag and
+       you click on it: then the app will show you a list of all fantasy games)
+3. [ ] style the app to have a retro console look (/because I think it's cool/)
+4. [ ] add a reflections menu aside from the normal home screen for the
+       user to be able to see the reflections they wrote about each game
+5. [ ] add option to filter to show certain games (can combine this with
+       the search maybe)
+6. [ ] add fanfare for when you complete a game, and maybe some sort of
+       encouragement when you drop one?
+       (maybe use css animations for this... figure it out)
+7. [ ] add save to CSV (make sure to version tag the downloaded CSV
+       somehow)
+8. [ ] add load from CSV (and act correctly based on the version tag)
+9. [ ] add an insights screen to show some useful summary info or summary
+       statistics on games completed and not completed, total time spent
+       gaming in a certain period, games started vs games finished, etc
+*** AI/ML stuff
+(suppose step 0 would be to decide if using neural networks or something like SVM)
+
+1. [ ] read up on best model to use for my situation. if can't come to
+       conclusion in 30min, use SVM
+2. [ ] add code to load the specific user's data from the database into
+       the model
+3. [ ] add code to/figure out how to train a model for classification to
+       predict on the "Game completed" field
+4. [ ] add code to predict if the user will complete a given game
+5. [ ] try to change model from classification type and upgrade to
+       regression type, and then use that to score which games are
+       most likely to be completed
+** TODO Installing and running the project
+** TODO Deploying the project
+** TODO Acknowledgments
+*** Technologies used
+- Django
+- HTMx
+** License
+HeroLog -- An app to help you slay your backlog
+Copyright (C) 2025 Daunovan McCullough
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
