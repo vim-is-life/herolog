@@ -21,7 +21,7 @@ nvidia-nvtx-cu11==11.8.86
 pillow==11.0.0
 sqlparse==0.5.3
 sympy==1.13.1
-torch==2.5.1+cu118
+torch==2.7.0
 torchaudio==2.5.1+cu118
 torchvision==0.20.1+cu118
 triton==3.1.0
