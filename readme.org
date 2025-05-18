@@ -96,7 +96,7 @@ and are roughly in the order I'd like to implement them in.
 - Django
 - HTMx
 ** License
-HeroLog -- An app to help you slay your backlog
+HeroLog -- An app to help you slay your backlog \\
 Copyright (C) 2025 Daunovan McCullough
 
 This program is free software: you can redistribute it and/or modify
