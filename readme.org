@@ -47,7 +47,7 @@ and are roughly in the order I'd like to implement them in.
 *** MVP
 1. [ ] add a home screen and an about screen (just HTML + HTMx, and for
        now pick up a css library like simplecss or something)
-2. [ ] add a Game model definition
+2. [X] add a +Game model definition+ initial model defintions
 3. [ ] update UI to be able to show, create (let's say manual add for now),
        update, delete, and edit games (assume no users for now)
 4. [ ] add user login and allow games to be connected to specific user
